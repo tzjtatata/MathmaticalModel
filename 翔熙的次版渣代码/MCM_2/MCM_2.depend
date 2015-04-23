@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1429719896 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib2.h"
+
+1429717419 d:\program files (x86)\codeblocks\xiangxifile\mcm_2\lib2.h
+
+1429719857 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_2\lib2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"lib2.h"
+

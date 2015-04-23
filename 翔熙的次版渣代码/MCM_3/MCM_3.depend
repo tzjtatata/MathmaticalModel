@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1429760039 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib3.h"
+
+1429760039 d:\program files (x86)\codeblocks\xiangxifile\mcm_3\lib3.h
+
+1429773393 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_3\lib3.c
+	<stdlib.h>
+	<stdio.h>
+	"lib3.h"
+
