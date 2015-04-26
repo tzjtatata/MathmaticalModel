@@ -42,8 +42,8 @@ static int stringToNum(char *pch)
     int result = 0;
     while (*pch != '\0')
     {
-        result *= 4;
-        result += charToNum(*pch);
+        result <<= 2;
+        result |= charToNum(*pch);
         pch++;
     }
     return result;
@@ -129,7 +129,9 @@ status writeInMultipleRecord(char *recordName, char *outputFile)
         {
             return ERROR;
         }
+        printf("Record:%8d\r", i);
     }
+    printf("\n");
     fclose(fpIn);
     fclose(fpOut);
     return FINE;
@@ -167,9 +169,12 @@ status showData(char *name)
         printf("%s can't open", name);
         return ERROR;
     }
+    int i = 0;
     while (loadSingleRecord(SR, fp) != 0)
     {
         printSingleRecord(SR);
+        if (i++ > 1000)
+            break;
     }
     return FINE;
 }

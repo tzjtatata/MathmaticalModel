@@ -14,3 +14,17 @@
 
 1429806766 d:\program files (x86)\codeblocks\xiangxifile\mcm\lib.h
 
+1430010540 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"lib.h"
+
+1429806766 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.h
+
+1430010038 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+

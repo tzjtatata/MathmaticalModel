@@ -11,3 +11,16 @@
 	<stdio.h>
 	"lib3.h"
 
+1429974580 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"lib3.h"
+
+1429975281 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.h
+
+1429973901 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib3.h"
+

@@ -13,3 +13,16 @@
 	<assert.h>
 	"lib2.h"
 
+1429807418 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lib2.h"
+
+1429975192 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
+
+1429973766 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib2.h"
+

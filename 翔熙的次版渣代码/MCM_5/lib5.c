@@ -77,12 +77,12 @@ status readInList(char *name)
     }
     if ((fread(listCount, sizeof(int), listLength, fp)) != listLength)
     {
-        printf("ERROR: fail to allocate memory\n");
+        printf("ERROR: fail to read file from %s\n", name);
         return ERROR;
     }
     if ((fread(listPos, sizeof(int), listLength, fp)) != listLength)
     {
-        printf("ERROR: fail to allocate memory\n");
+        printf("ERROR: fail to read file from %s\n", name);
         return ERROR;
     }
     fclose(fp);
@@ -105,11 +105,11 @@ status checkData(char *input, char *from, char *to, int k)
         return ERROR;
     }
     int count = listCount[goal];
-    long pos   = (long)listPos[goal];
+    long pos   = (long)(listPos[goal]);
     int recordNumber = 2*count*BUF_LEN;
     if (count == 0)
     {
-        printf("%s is not in this series", input);
+        printf("%s is not in this series\n", input);
         return ERROR;
     }
     int *block = NULL;
@@ -118,7 +118,12 @@ status checkData(char *input, char *from, char *to, int k)
         printf("ERROR: fail to allocate memory\n");
         return ERROR;
     }
-    fseek(fpFrom, pos, SEEK_SET);
+    while (pos > 1000L)
+    {
+        fseek(fpFrom, 1000L*2*BUF_LEN*sizeof(int), SEEK_CUR);
+        pos -= 1000;
+    }
+    fseek(fpFrom, pos*2 * BUF_LEN * sizeof(int), SEEK_CUR);
     if ((fread(block, sizeof(int), recordNumber, fpFrom)) != recordNumber)
     {
         printf("ERROR: fail to read data from %s\n", from);
@@ -128,9 +133,7 @@ status checkData(char *input, char *from, char *to, int k)
     for (i = 0; i < recordNumber; i+=2)
     {
         if (block[i] == -1)
-        {
-            continue;
-        }
+            break;
         fprintf(fpTo, "%d: {%d, %d}\n", block[i], block[i+1]+1, block[i+1]+k+1);
     }
     fclose(fpFrom);

@@ -11,3 +11,15 @@
 	<stdlib.h>
 	"lib5.h"
 
+1429949981 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib5.h"
+
+1429975495 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\lib5.h
+
+1429940140 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\lib5.c
+	<stdlib.h>
+	<stdio.h>
+	"lib5.h"
+

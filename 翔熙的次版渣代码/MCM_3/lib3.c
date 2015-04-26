@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "lib3.h"
 
 typedef struct{
@@ -9,6 +10,8 @@ int y;
 
 static int listLength;
 static vector* vecList;
+static char buf1[2 * BUF_LEN * sizeof(int)];
+static char buf2[2 * BUF_LEN * sizeof(int)];
 
 status getLength(char *s)
 {
@@ -41,64 +44,27 @@ status getVector(char *s)
     return FINE;
 }
 
-void vectorAttribute(vector *left, vector right)
+void countSort(int sup)
 {
-    (*left).x = right.x;
-    (*left).y = right.y;
-    return;
-}
-
-/*This function returns subscript of the largest number in list smaller than goal*/
-int ground(int list[], int goal)
-{
-    int low = 0;
-    int high = 14-1;
-    int mid = 14/2;
-    while (low <= high)
+    int count[sup];
+    vector * sort = (vector*)calloc(listLength, sizeof(vector));
+    int i;
+    memset(count, 0, sizeof(int)*sup);
+    for (i = 0; i < listLength; i++)
     {
-        if (list[mid] < goal)
-            low = mid + 1;
-        if (list[mid] > goal)
-            high = mid - 1;
-        if (list[mid] == goal)
-        {
-            return (mid)? mid-1:mid;
-        }
-        mid = low + (high-low)/2;
+        count[vecList[i].y]++;
     }
-    return (low)? low-1:low;
-}
-
-void shellSort(void)
-{
-    int shellList[14] = {1, 4, 9, 20, 46, 103, 233, 525, 1182, 2660, 5985, 13467, 30301, 68178};//Tokuda's increment
-    int subscript = ground(shellList, listLength);
-    int step;
-    int start;
-    int i, j;
-    vector key;
-    while (subscript >= 0)
+    for (i = 1; i < sup; i++)
     {
-        step = shellList[subscript];
-
-        for (start = 0; start < step; start++)
-        {
-            j = start + step;
-            while (j < listLength)
-            {
-                vectorAttribute(&key, vecList[j]);
-                i = j - step;
-                while ((i >= start) && (vecList[i].y > key.y))//Notice:the order of these two judges matters a lot
-                {
-                    vectorAttribute(vecList+i+step, vecList[i]);
-                    i -= step;
-                }
-                vectorAttribute(vecList+i+step, key);
-                j += step;
-            }//Insertion sort with the gap of step
-        }
-        subscript--;//Move on to the next step
+        count[i] += count[i-1];
     }
+    for (i = listLength-1; i >= 0; i--)
+    {
+        sort[count[vecList[i].y]-1] = vecList[i];
+        count[vecList[i].y]--;
+    }
+    memcpy(vecList, sort, listLength * sizeof(vector));
+    free(sort);
     return;
 }
 
@@ -179,6 +145,8 @@ status organizeData(char *from, char *to)
         printf("ERROR:can't open %s\n", to);
         return ERROR;
     }
+    setvbuf(fpIn, buf1, _IOFBF, 2 * BUF_LEN * sizeof(int));
+    setvbuf(fpOut, buf2, _IOFBF, 2 * BUF_LEN * sizeof(int));
     if ((dataBlock = (int*)calloc(2*BUF_LEN, sizeof(int))) == NULL)
     {
         printf("ERROR:failed to allocate memory!\n");
@@ -187,10 +155,17 @@ status organizeData(char *from, char *to)
     int i, pos;
     for (i = 0; i < listLength; i++)
     {
-        pos = (vecList[i].x) * 2 * BUF_LEN * sizeof(int);
-        fseek(fpIn, (long)pos, SEEK_SET);
+        pos = (vecList[i].x);
+        while (pos > 1000)
+        {
+            fseek(fpIn, 1000L * (2 * BUF_LEN * sizeof(int)), SEEK_CUR);
+            pos -= 1000;
+        }
+        fseek(fpIn, (long)pos*(2 * BUF_LEN * sizeof(int)), SEEK_CUR);
         fread(dataBlock, sizeof(int), 2*BUF_LEN, fpIn);
         fwrite(dataBlock, sizeof(int), 2*BUF_LEN, fpOut);
+        fseek(fpIn, 0L, SEEK_SET);
+        printf("\r%.6f %%", (float)i / listLength * 100);
     }
     fclose(fpIn);
     fclose(fpOut);

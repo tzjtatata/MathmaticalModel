@@ -8,7 +8,7 @@ typedef int status;
 
 typedef int _kMerOrder;
 
-#define BUF_LEN 50
+#define BUF_LEN 2000
 #define RECORD_LENGTH 100
 
 void kInitialize(int k);

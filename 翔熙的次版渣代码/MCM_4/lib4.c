@@ -4,7 +4,6 @@
 static int listLength;
 static FILE *fpIn;
 static FILE *fpOut;
-#include <complex.h>
 
 status openFile(char *from, char *to)
 {
@@ -42,6 +41,7 @@ status getLength(void)
         printf("ERROR: failed to read length data\n");
         return ERROR;
     }
+    listLength++;
     fseek(fpIn, 0L, SEEK_SET);
     fwrite(&listLength, sizeof(int), 1, fp);
     fclose(fp);
@@ -68,7 +68,7 @@ status writeInData(void)
         while (current == order)
         {
             repeat++;
-            pos += 2 * BUF_LEN * sizeof(int);
+            pos ++;
             if ((fread(&current, sizeof(int), 1, fpIn)) != 1)
             {
                 listCount[order] = repeat;

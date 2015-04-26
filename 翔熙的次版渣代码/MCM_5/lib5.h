@@ -1,7 +1,7 @@
 #ifndef LIB5_H_INCLUDED
 #define LIB5_H_INCLUDED
 
-#define BUF_LEN 50
+#define BUF_LEN 2000
 typedef int status;
 #define ERROR -1
 #define FINE 1

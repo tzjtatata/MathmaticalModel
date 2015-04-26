@@ -5,7 +5,7 @@ typedef int status;
 #define FINE 1
 #define ERROR -1
 
-#define BUF_LEN 50
+#define BUF_LEN 2000
 
 status openFile(char *from, char *to);
 void closeFile(void);

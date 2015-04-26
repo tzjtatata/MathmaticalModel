@@ -4,11 +4,23 @@
 
 int main()
 {
-    printf("%d\n", getLength("metaData.txt"));
-    printf("%d\n", getVector("dataReference.txt"));
-    shellSort();
-    printf("%d\n", writeInReference("referOrganize.txt"));
-    printf("%d\n", organizeData("dataInverse.txt", "dataOrganize.txt"));
+    if (getLength("metaData.txt") == FINE)
+    {
+        printf("Length got\n");
+    }
+    if (getVector("dataReference.txt") == FINE)
+    {
+        printf("dataReference got\n");
+    }
+    countSort(65536);
+    if (writeInReference("referOrganize.txt") == FINE)
+    {
+        printf("referOrganize wrote in\n");
+    }
+    if (organizeData("dataInverse.txt", "dataOrganize.txt") == FINE)
+    {
+        printf("data Organized!");
+    }
     getchar();
     return 0;
 }

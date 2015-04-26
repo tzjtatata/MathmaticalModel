@@ -9,7 +9,7 @@ int main()
     gets(s);
     printf("%d\n", getLength("metaData.txt"));
     printf("%d\n", readInList("bisearchTable.txt"));
-    printf("%d\n", checkData(s, "dataOrganize.txt", "checkResult.txt", 5));
+    printf("%d\n", checkData(s, "dataOrganize.txt", "checkResult.txt", 8));
     getchar();
     return 0;
 }
