@@ -19,10 +19,18 @@
 	<string.h>
 	"lib2.h"
 
-1429975192 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
+1430374277 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
+	"../commen.h"
 
-1429973766 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
+1430373343 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib2.h"
+
+1430374104 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.c
+	<stdlib.h>
+	<stdio.h>
+	"commen.h"
+
+1430374323 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
 

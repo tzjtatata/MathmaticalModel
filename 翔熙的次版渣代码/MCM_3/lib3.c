@@ -12,6 +12,14 @@ static int listLength;
 static vector* vecList;
 static char buf1[2 * BUF_LEN * sizeof(int)];
 static char buf2[2 * BUF_LEN * sizeof(int)];
+static int countLength;
+
+void initializeCountLength(int k)
+{
+    k <<= 1;
+    countLength = 1 << k;
+    return;
+}
 
 status getLength(char *s)
 {
@@ -44,17 +52,17 @@ status getVector(char *s)
     return FINE;
 }
 
-void countSort(int sup)
+void countSort(void)
 {
-    int count[sup];
+    int count[countLength];
     vector * sort = (vector*)calloc(listLength, sizeof(vector));
     int i;
-    memset(count, 0, sizeof(int)*sup);
+    memset(count, 0, sizeof(int)*countLength);
     for (i = 0; i < listLength; i++)
     {
         count[vecList[i].y]++;
     }
-    for (i = 1; i < sup; i++)
+    for (i = 1; i < countLength; i++)
     {
         count[i] += count[i-1];
     }
@@ -169,23 +177,5 @@ status organizeData(char *from, char *to)
     }
     fclose(fpIn);
     fclose(fpOut);
-    return FINE;
-}
-
-status binaryFilePrint(char *name)
-{
-    FILE *fp;
-    if ((fp = fopen(name, "rb+")) == NULL)
-    {
-        printf("ERROR:can't open %s\n", name);
-        return ERROR;
-    }
-    int term;
-    while ((fread(&term, sizeof(int), 1, fp)) == 1)
-    {
-        printf("%d\t", term);
-    }
-    printf("\n");
-    fclose(fp);
     return FINE;
 }

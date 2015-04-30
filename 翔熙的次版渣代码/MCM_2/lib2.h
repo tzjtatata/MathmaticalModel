@@ -1,15 +1,9 @@
 #ifndef LIB2_H_INCLUDED
 #define LIB2_H_INCLUDED
 
-typedef int status;
-#define ERROR -1
-#define FINE 1
-#define END -2
+#include "../commen.h"
 
 typedef int _kMerOrder;
-
-#define BUF_LEN 2000
-#define RECORD_LENGTH 100
 
 void kInitialize(int k);
 status pointerInitialize(void);

@@ -20,35 +20,6 @@ static void kInitialize(int k)
 }
 //When product is larger than the range of int, this function, as well as all those quote it, can't return correct result
 
-static int charToNum(char ch)
-{
-    switch(ch)
-    {
-    case 'A':
-        return 0;
-    case 'C':
-        return 1;
-    case 'G':
-        return 2;
-    case 'T':
-        return 3;
-    default:
-        return ERROR;
-    }
-}
-
-static int stringToNum(char *pch)
-{
-    int result = 0;
-    while (*pch != '\0')
-    {
-        result <<= 2;
-        result |= charToNum(*pch);
-        pch++;
-    }
-    return result;
-}
-
 void printSingleRecord(SingleRecord *input)
 {
     int i;
@@ -169,12 +140,9 @@ status showData(char *name)
         printf("%s can't open", name);
         return ERROR;
     }
-    int i = 0;
     while (loadSingleRecord(SR, fp) != 0)
     {
         printSingleRecord(SR);
-        if (i++ > 1000)
-            break;
     }
     return FINE;
 }

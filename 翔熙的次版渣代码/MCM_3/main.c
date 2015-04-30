@@ -4,6 +4,7 @@
 
 int main()
 {
+    initializeCountLength(K_VALUE);
     if (getLength("metaData.txt") == FINE)
     {
         printf("Length got\n");
@@ -12,7 +13,7 @@ int main()
     {
         printf("dataReference got\n");
     }
-    countSort(65536);
+    countSort();
     if (writeInReference("referOrganize.txt") == FINE)
     {
         printf("referOrganize wrote in\n");

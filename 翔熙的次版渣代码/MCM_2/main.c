@@ -4,14 +4,14 @@
 
 int main()
 {
-    kInitialize(8);
+    kInitialize(K_VALUE);
     if (pointerInitialize() == FINE)
         printf("Initialize pointers\n");
 
     if (fileOpen("DataOutput.txt") == FINE)
         printf("Open Files\n");
     if (writeData() == FINE)
-        printf("File ")
+        printf("File written in");
     fileClose();
     getchar();
     return 0;

@@ -14,17 +14,27 @@
 
 1429806766 d:\program files (x86)\codeblocks\xiangxifile\mcm\lib.h
 
-1430010540 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.c
+1430373213 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<assert.h>
 	"lib.h"
 
-1429806766 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.h
+1430374148 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\lib.h
+	"../commen.h"
 
-1430010038 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\main.c
+1430373226 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
+
+1430373196 d:\program files (x86)\codeblocks\xiangxifile\mcm\\commen.h
+
+1430374148 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
+
+1430374104 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.c
+	<stdlib.h>
+	<stdio.h>
+	"commen.h"
 
