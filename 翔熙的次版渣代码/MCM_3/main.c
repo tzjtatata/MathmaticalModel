@@ -14,10 +14,6 @@ int main()
         printf("dataReference got\n");
     }
     countSort();
-    if (writeInReference("referOrganize.txt") == FINE)
-    {
-        printf("referOrganize wrote in\n");
-    }
     if (organizeData("dataInverse.txt", "dataOrganize.txt") == FINE)
     {
         printf("data Organized!");

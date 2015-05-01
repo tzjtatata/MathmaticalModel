@@ -49,13 +49,12 @@ status pointerInitialize(void)
     }
     for (i = 0; i < kMerNumber; i++)
     {
-        if ((pptr[i] = (int *)calloc(BUF_LEN * 2, sizeof(int*))) == NULL)
+        if ((pptr[i] = (int *)calloc(BUF_LEN * 2, sizeof(int))) == NULL)
         {
             printf("ERROR: failed to allocate memory!\n");
             return ERROR;
         }
-        pptr[i][0] = -1;
-        pptr[i][1] = -1;
+        memset(pptr[i], -1, BUF_LEN * 2 * sizeof(int));
         pList[i] = 0;
     }
     return FINE;

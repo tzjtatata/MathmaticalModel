@@ -18,6 +18,10 @@ void initializeCountLength(int k)
 {
     k <<= 1;
     countLength = 1 << k;
+    FILE *fp;
+    fp = fopen("countSup.txt", "wb+");
+    fwrite(&countLength, sizeof(int), 1, fp);
+    fclose(fp);
     return;
 }
 
@@ -56,16 +60,20 @@ void countSort(void)
 {
     int count[countLength];
     vector * sort = (vector*)calloc(listLength, sizeof(vector));
-    int i;
     memset(count, 0, sizeof(int)*countLength);
+    int i;
     for (i = 0; i < listLength; i++)
     {
         count[vecList[i].y]++;
     }
+    FILE* fp = fopen("binarySearch.txt", "wb+");
+    fwrite(count, sizeof(int), countLength, fp);
     for (i = 1; i < countLength; i++)
     {
         count[i] += count[i-1];
     }
+    fwrite(count, sizeof(int), countLength, fp);
+    fclose(fp);
     for (i = listLength-1; i >= 0; i--)
     {
         sort[count[vecList[i].y]-1] = vecList[i];
@@ -84,58 +92,6 @@ void vecListPrint(void)
         printf("%4d\t%4d\n", vecList[i].x, vecList[i].y);
     }
     return;
-}
-
-status writeInReference(char *s)
-{
-    FILE *fp;
-    int *list;
-    if ((list = (int*)calloc(listLength, sizeof(int))) == NULL)
-    {
-        printf("ERROR:failed to allocate memory!\n");
-        return ERROR;
-    }
-    if ((fp = fopen(s, "wb+")) == NULL)
-    {
-        printf("ERROR:can't open %s\n", s);
-        return ERROR;
-    }
-    int i;
-    for (i = 0; i < listLength; i++)
-    {
-        list[i] = vecList[i].y;
-    }
-    fwrite(list, sizeof(int), listLength, fp);
-    fclose(fp);
-    return FINE;
-}
-
-status referPrint(char *s)
-{
-    FILE *fp;
-    int *list;
-    if ((list = (int*)calloc(listLength, sizeof(int))) == NULL)
-    {
-        printf("ERROR:failed to allocate memory!\n");
-        return ERROR;
-    }
-    if ((fp = fopen(s, "rb+")) == NULL)
-    {
-        printf("ERROR:can't open %s\n", s);
-        return ERROR;
-    }
-    if ((fread(list, sizeof(int), listLength, fp)) != listLength)
-    {
-        printf("ERROR:failed to read in data from %s\n", s);
-        return ERROR;
-    }
-    int i;
-    for (i = 0; i < listLength; i++)
-    {
-        printf("%d\t", list[i]);
-    }
-    printf("\n");
-    return FINE;
 }
 
 status organizeData(char *from, char *to)
@@ -175,7 +131,9 @@ status organizeData(char *from, char *to)
         fseek(fpIn, 0L, SEEK_SET);
         printf("\r%.6f %%", (float)i / listLength * 100);
     }
+    printf("\n");
     fclose(fpIn);
     fclose(fpOut);
     return FINE;
 }
+

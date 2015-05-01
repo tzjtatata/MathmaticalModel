@@ -13,7 +13,7 @@
 	<assert.h>
 	"lib2.h"
 
-1429807418 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.c
+1430437851 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,7 +22,7 @@
 1430374277 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
 	"../commen.h"
 
-1430373343 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
+1430437651 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib2.h"

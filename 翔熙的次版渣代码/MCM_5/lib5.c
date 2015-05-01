@@ -60,7 +60,7 @@ status checkData(char *input, char *from, char *to, int k)
         return ERROR;
     }
     int count = listCount[goal];
-    long pos   = (long)(listPos[goal]);
+    long pos   = (long)(listPos[goal]) - 1L;
     int recordNumber = 2*count*BUF_LEN;
     if (count == 0)
     {
