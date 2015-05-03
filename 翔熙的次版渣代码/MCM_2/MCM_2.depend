@@ -22,7 +22,7 @@
 1430374277 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
 	"../commen.h"
 
-1430437651 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
+1430438202 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib2.h"
@@ -32,5 +32,5 @@
 	<stdio.h>
 	"commen.h"
 
-1430374323 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
+1430464153 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
 

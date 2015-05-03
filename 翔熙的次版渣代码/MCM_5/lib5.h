@@ -5,6 +5,8 @@
 
 status getLength(char *s);
 status readInList(char *name);
-status checkData(char *input, char *from, char *to, int k);
+status initializeFilePointer(char *from, char *to, char *dictionary);
+status checkData(char *input, int k);
+void fileClose(void);
 
 #endif // LIB5_H_INCLUDED

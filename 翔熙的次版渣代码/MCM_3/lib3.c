@@ -10,8 +10,6 @@ int y;
 
 static int listLength;
 static vector* vecList;
-static char buf1[2 * BUF_LEN * sizeof(int)];
-static char buf2[2 * BUF_LEN * sizeof(int)];
 static int countLength;
 
 void initializeCountLength(int k)
@@ -94,46 +92,27 @@ void vecListPrint(void)
     return;
 }
 
-status organizeData(char *from, char *to)
+status writeInDictionary(char *output)
 {
-    FILE *fpIn;
-    FILE *fpOut;
-    int *dataBlock;
-    if ((fpIn = fopen(from, "rb+")) == NULL)
-    {
-        printf("ERROR:can't open %s\n", from);
-        return ERROR;
-    }
-    if ((fpOut = fopen(to, "wb+")) == NULL)
-    {
-        printf("ERROR:can't open %s\n", to);
-        return ERROR;
-    }
-    setvbuf(fpIn, buf1, _IOFBF, 2 * BUF_LEN * sizeof(int));
-    setvbuf(fpOut, buf2, _IOFBF, 2 * BUF_LEN * sizeof(int));
-    if ((dataBlock = (int*)calloc(2*BUF_LEN, sizeof(int))) == NULL)
-    {
-        printf("ERROR:failed to allocate memory!\n");
-        return ERROR;
-    }
-    int i, pos;
+    int position[listLength];
+    int i;
     for (i = 0; i < listLength; i++)
     {
-        pos = (vecList[i].x);
-        while (pos > 1000)
-        {
-            fseek(fpIn, 1000L * (2 * BUF_LEN * sizeof(int)), SEEK_CUR);
-            pos -= 1000;
-        }
-        fseek(fpIn, (long)pos*(2 * BUF_LEN * sizeof(int)), SEEK_CUR);
-        fread(dataBlock, sizeof(int), 2*BUF_LEN, fpIn);
-        fwrite(dataBlock, sizeof(int), 2*BUF_LEN, fpOut);
-        fseek(fpIn, 0L, SEEK_SET);
-        printf("\r%.6f %%", (float)i / listLength * 100);
+        position[i] = vecList[i].x;
     }
-    printf("\n");
-    fclose(fpIn);
-    fclose(fpOut);
+    FILE *fp = fopen(output, "wb+");
+    if (fp == NULL)
+    {
+        printf("ERROR:can't open %s\n", output);
+        return ERROR;
+    }
+    if ((fwrite(position, sizeof(int), listLength, fp)) != listLength)
+    {
+        printf("Fail to write data into %s", output);
+        fclose(fp);
+        return ERROR;
+    }
+    fclose(fp);
     return FINE;
 }
 

@@ -6,9 +6,9 @@ typedef int status;
 #define FINE 1
 #define END -2
 
-#define BUF_LEN 2000
+#define BUF_LEN 200
 #define RECORD_LENGTH 100
-#define K_VALUE 8
+#define K_VALUE 5
 
 status binaryFilePrint(char *name);
 int stringToNum(char *pch);

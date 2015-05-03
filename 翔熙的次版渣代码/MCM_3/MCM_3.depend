@@ -11,21 +11,21 @@
 	<stdio.h>
 	"lib3.h"
 
-1430139291 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.c
+1430448465 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	"lib3.h"
 
-1430374408 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.h
+1430441139 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\lib3.h
 	"../commen.h"
 
-1430438797 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\main.c
+1430454536 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib3.h"
 
-1430374323 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
+1430464153 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
 
 1430374104 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.c
 	<stdlib.h>

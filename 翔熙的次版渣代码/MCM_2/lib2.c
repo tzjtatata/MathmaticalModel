@@ -127,6 +127,7 @@ status writeData(void)
         {
             kMerOrder = kMerBlock[pos];
             pptr[kMerOrder][pList[kMerOrder]++] = *recordOrder;
+
             pptr[kMerOrder][pList[kMerOrder]++] = pos;
             if (pList[kMerOrder] == 2 * BUF_LEN)//When bug is full,pour in the data
             {

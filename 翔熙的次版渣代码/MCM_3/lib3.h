@@ -8,9 +8,8 @@ status getLength(char *s);
 status getVector(char *s);
 void shellSort(void);
 void vecListPrint(void);
-status organizeData(char *from, char *to);
-status writeInReference(char *s);
 status referPrint(char *s);
 void countSort(void);
+status writeInDictionary(char *output);
 
 #endif // LIB3_H_INCLUDED

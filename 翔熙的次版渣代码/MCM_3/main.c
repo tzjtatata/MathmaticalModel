@@ -14,10 +14,11 @@ int main()
         printf("dataReference got\n");
     }
     countSort();
-    if (organizeData("dataInverse.txt", "dataOrganize.txt") == FINE)
+    if (writeInDictionary("dictionary.txt") == FINE)
     {
-        printf("data Organized!");
+        printf("Dictionary written in\n");
     }
+    printf("Enter to exit\n");
     getchar();
     return 0;
 }

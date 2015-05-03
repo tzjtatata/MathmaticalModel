@@ -5,6 +5,6 @@
 int main()
 {
     printf("Reading records...\n");
-    writeInMultipleRecord_Shell("testCase.txt", 8);
+    writeInMultipleRecord_Shell("testCase.txt", K_VALUE);
     return 0;
 }

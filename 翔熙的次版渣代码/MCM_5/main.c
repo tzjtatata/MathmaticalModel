@@ -7,9 +7,23 @@ int main()
     char s[RECORD_LENGTH+1];
     printf("Input kMer:");
     gets(s);
-    printf("%d\n", getLength("countSup.txt"));
-    printf("%d\n", readInList("binarySearch.txt"));
-    printf("%d\n", checkData(s, "dataOrganize.txt", "checkResult.txt", K_VALUE));
+    if (getLength("countSup.txt") == FINE)
+    {
+        printf("CountSup gotten.\n");
+    }
+    if (readInList("binarySearch.txt") == FINE)
+    {
+        printf("Search list loaded\n");
+    }
+    if (initializeFilePointer("dataInverse.txt", "checkResult.txt", "dictionary.txt") == FINE)
+    {
+        printf("File opened\n");
+    }
+    if (checkData(s, K_VALUE) == FINE)
+    {
+        printf("Finish checking!\n");
+    }
+    fileClose();
     getchar();
     return 0;
 }
