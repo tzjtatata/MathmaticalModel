@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1429719896 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib2.h"
+
+1429717419 d:\program files (x86)\codeblocks\xiangxifile\mcm_2\lib2.h
+
+1429719857 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_2\lib2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"lib2.h"
+
+1430437851 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lib2.h"
+
+1430374277 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\lib2.h
+	"../commen.h"
+
+1430438202 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib2.h"
+
+1430374104 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.c
+	<stdlib.h>
+	<stdio.h>
+	"commen.h"
+
+1430829873 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
+

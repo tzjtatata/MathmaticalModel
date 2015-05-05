@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1429805040 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_5\lib5.c
+	<stdlib.h>
+	<stdio.h>
+	"lib5.h"
+
+1429804875 d:\program files (x86)\codeblocks\xiangxifile\mcm_5\lib5.h
+
+1429804875 source:d:\program files (x86)\codeblocks\xiangxifile\mcm_5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib5.h"
+
+1430831821 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib5.h"
+
+1430831802 d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\lib5.h
+	"../commen.h"
+
+1430832809 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\mcm_5\lib5.c
+	<stdlib.h>
+	<stdio.h>
+	"lib5.h"
+
+1430829873 d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.h
+
+1430829660 source:d:\program files (x86)\codeblocks\xiangxifile\mcm\commen.c
+	<stdlib.h>
+	<stdio.h>
+	"commen.h"
+
